@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Maker</title>
+</head>
+<body>
+    <h1 id="cashCounter">0</h1>
+    <img id="dollarClicker"src="1 dollar.jpg">
+    <img style="display:none; margin-left:auto; margin-right:auto;" id="tenDollarClicker" src="10.jpg">
+    <h2 style="display:none" id="annoucement">You Got Money!</h2>
+
+<script>
+    document.body.style.backgroundColor = "green"
+    document.body.style.textAlign = "center"
+    var cashCounter = document.querySelector("#cashCounter")
+    var dollarClicker = document.querySelector("#dollarClicker")
+    var tenDollarClicker= document.querySelector("#tenDollarClicker")
+    var money = 0
+    
+    dollarClicker.onclick = increaseBy1
+    tenDollarClicker.onclick = increaseBy2
+
+    function increaseBy1(){
+        if(money == 10){
+            tenDollarClicker.style.display= "block"
+        }
+        money += 1
+        cashCounter.innerHTML = money
+    }
+
+    function increaseBy2(){
+        if(money >= 100){
+            annoucement.style.display= "block"
+        }
+        money += 10
+        cashCounter.innerHTML = money
+    }
+
+
+
+</script>
+</body>
+</html>
